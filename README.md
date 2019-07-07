@@ -27,7 +27,7 @@ python3 stitch.py --images images/rug  --output rug.png
 <img src="images/rug/rug10.jpg" width="64px" align="left" />
 
 
-<img src="images/rug/rug.png" alt="stitched rug panorama" title="rug"/>
+<img src="rug.png" alt="stitched rug panorama" title="rug"/>
 
 
     https://stackoverflow.com/questions/40088222/ffmpeg-convert-video-to-images/40090033
