@@ -15,16 +15,16 @@ to be fair, the author said it was a hack! so we just don't use it..
 ```bash
 python3 stitch.py --images images/rug  --output rug.png
 ```
-<img src="images/rug/rug01.jpg" width="64px"/>
-<img src="images/rug/rug02.jpg" width="64px"/>
-<img src="images/rug/rug03.jpg" width="64px"/>
-<img src="images/rug/rug04.jpg" width="64px"/>
-<img src="images/rug/rug05.jpg" width="64px"/>
-<img src="images/rug/rug06.jpg" width="64px"/>
-<img src="images/rug/rug07.jpg" width="64px"/>
-<img src="images/rug/rug08.jpg" width="64px"/>
-<img src="images/rug/rug09.jpg" width="64px"/>
-<img src="images/rug/rug10.jpg" width="64px"/>
+<img src="images/rug/rug01.jpg" width="64px" align="left" />
+<img src="images/rug/rug02.jpg" width="64px" align="left" />
+<img src="images/rug/rug03.jpg" width="64px" align="left" />
+<img src="images/rug/rug04.jpg" width="64px" align="left" />
+<img src="images/rug/rug05.jpg" width="64px" align="left" />
+<img src="images/rug/rug06.jpg" width="64px" align="left" />
+<img src="images/rug/rug07.jpg" width="64px" align="left" />
+<img src="images/rug/rug08.jpg" width="64px" align="left" />
+<img src="images/rug/rug09.jpg" width="64px" align="left" />
+<img src="images/rug/rug10.jpg" width="64px" align="left" />
 
 
 <img src="images/rug/rug.png" alt="stitched rug panorama" title="rug"/>
