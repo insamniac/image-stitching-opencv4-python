@@ -15,19 +15,19 @@ to be fair, the author said it was a hack! so we just don't use it..
 ```bash
 python3 stitch.py --images images/rug  --output rug.png
 ```
-<img src="rug01.jpg" width="64px"/>
-<img src="rug02.jpg" width="64px"/>
-<img src="rug03.jpg" width="64px"/>
-<img src="rug04.jpg" width="64px"/>
-<img src="rug05.jpg" width="64px"/>
-<img src="rug06.jpg" width="64px"/>
-<img src="rug07.jpg" width="64px"/>
-<img src="rug08.jpg" width="64px"/>
-<img src="rug09.jpg" width="64px"/>
-<img src="rug10.jpg" width="64px"/>
+<img src="images/rug/rug01.jpg" width="64px"/>
+<img src="images/rug/rug02.jpg" width="64px"/>
+<img src="images/rug/rug03.jpg" width="64px"/>
+<img src="images/rug/rug04.jpg" width="64px"/>
+<img src="images/rug/rug05.jpg" width="64px"/>
+<img src="images/rug/rug06.jpg" width="64px"/>
+<img src="images/rug/rug07.jpg" width="64px"/>
+<img src="images/rug/rug08.jpg" width="64px"/>
+<img src="images/rug/rug09.jpg" width="64px"/>
+<img src="images/rug/rug10.jpg" width="64px"/>
 
 
-<img src="rug.png" alt="stitched rug panorama" title="rug"/>
+<img src="images/rug/rug.png" alt="stitched rug panorama" title="rug"/>
 
 
     https://stackoverflow.com/questions/40088222/ffmpeg-convert-video-to-images/40090033
