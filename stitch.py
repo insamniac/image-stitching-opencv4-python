@@ -44,7 +44,7 @@ RED=(0,0,255)
 for imagePath in imagePaths:
         image = cv2.imread(imagePath)
         mc=max_contours(image)
-        cv2.drawContours(image, [mc], 0, RED, 2)
+#        cv2.drawContours(image, [mc], 0, RED, 2)
         images.append(image)
 
 # initialize OpenCV's image sticher object and then perform the image
