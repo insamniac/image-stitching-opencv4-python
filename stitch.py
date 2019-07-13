@@ -35,7 +35,11 @@ def max_contours(image):
         cnts = imutils.grab_contours(cnts)
         return max(cnts, key=cv2.contourArea)
         
-
+def draw_kp(image):
+        orb = cv2.ORB_create(edgeThreshold=15, patchSize=31, nlevels=8, fastThreshold=20, scaleFactor=1.2, WTA_K=2,scoreType=cv2.ORB_HARRIS_SCORE, firstLevel=0, nfeatures=500)
+        kp = orb.detect(image)
+        image_kp=cv2.drawKeypoints(image, kp, None, color=(0,255,0), flags=cv2.DrawMatchesFlags_DEFAULT)
+        return image_kp
 
 # loop over the image paths, load each one, and add them to our
 # images to stich list
@@ -43,18 +47,20 @@ RED=(0,0,255)
 
 for imagePath in imagePaths:
         image = cv2.imread(imagePath)
-        mc=max_contours(image)
+#        mc=max_contours(image)
+         
+        kp = draw_kp(image)
 #        cv2.drawContours(image, [mc], 0, RED, 2)
         images.append(image)
 
 # initialize OpenCV's image sticher object and then perform the image
 # stitching
 
-stitcher = cv2.Stitcher_create()
+stitcher = cv2.Stitcher_create(cv2.Stitcher_PANORAMA)
 
 if args["cthresh"] > 0:
     cthresh=args["cthresh"]
-    print(f'[INFO] Using Confidence Threshold: {cthresh}')
+    print( f'[INFO] Using Confidence Threshold: {cthresh}' )
     stitcher.setPanoConfidenceThresh(args["cthresh"])
 
 
@@ -127,7 +133,7 @@ if status == 0:
     # display the output stitched image to our screen
     cv2.imshow("Stitched", stitched)
     cv2.waitKey(0)
-
+    print("all done")
 # otherwise the stitching failed, likely due to not enough keypoints)
 # being detected
 else:
