@@ -18,7 +18,9 @@ ap.add_argument("-o", "--output", type=str, required=True,
 ap.add_argument("-c", "--crop", type=int, default=0,
     help="whether to crop out largest rectangular region")
 ap.add_argument("-t", "--cthresh", type=float, default=1.0,
-    help="change the panoConfidenceThresh setting")
+    help="change the panoConfidenceThresh setting of the stitcher")
+ap.add_argument("--nodisplay", default=False, action="store_true", 
+    help="disable display of stitched output")
 args = vars(ap.parse_args())
 
 
@@ -131,9 +133,10 @@ if status == 0:
     cv2.imwrite(args["output"], stitched)
 
     # display the output stitched image to our screen
-    cv2.imshow("Stitched", stitched)
-    cv2.waitKey(0)
-    print("all done")
+    if not args["nodisplay"]:
+        cv2.imshow("Stitched", stitched)
+        cv2.waitKey(0)
+
 # otherwise the stitching failed, likely due to not enough keypoints)
 # being detected
 else:

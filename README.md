@@ -37,9 +37,9 @@ do
 done
 ```
 
-reset
+cleanup (delete all/most of the mess we just made)
 ```bash
-rm -Rf images/${oName}* videos/${oName}*
+rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
 ```
 
 
