@@ -38,7 +38,7 @@ do
     for img in $(ls images/${oName}_${i}/)
     do
         echo "<img src='../images/${oName}_${i}/${img}' width='64px' align='left' />" 
-    done > $oLog
+    done >> $oLog
 
     echo "<img src='${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
  fi
