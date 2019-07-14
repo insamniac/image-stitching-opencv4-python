@@ -32,11 +32,19 @@ done
 Try to stitch each group
 ```bash
 for i in $(seq -w 0000 $groups)
-do 
+do
  oLog=stitched_output/${oName}_${i}.md
+ which tee >/dev/null && TEE=true
+ if [ $TEE ]; then
+     echo '```bash' > $oLog
+     time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png | tee -a $oLog
+     echo '```' >> $oLog
+ else
+     echo > $oLog
+     time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png
+ fi
 
- time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png 
- if [[ $? -eq 0 ]] ; then
+ if [[ $(ls images/${oName}_${i} 2>/dev/null | wc -l) -gt 0 ]] ; then
     for img in $(ls images/${oName}_${i}/)
     do
         echo "<img src='${img}' width='64px' align='left' />" 
@@ -47,11 +55,6 @@ do
 done
 ```
 
-```bash
-<img src="images/rug/rug10.jpg" width="64px" align="left" />
-
-
-<img src="rug.png" alt="stitched rug panorama" title="rug"/>
 cleanup (delete all/most of the mess we just made)
 ```bash
 rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
