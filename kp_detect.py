@@ -37,7 +37,7 @@ def max_contours(image):
 def display_images(title,img,title2, img2):
         cv2.imshow(f'{title}', img)
         cv2.imshow(f'{title2}', img2)
-        print("waiting for press button")
+        print("press a button")
         cv2.waitKey(0)
 
 def display_image(title,img):
@@ -59,15 +59,15 @@ def draw_kp(path, image):
             streak+=1
             print(f'path: {path}, kpcount: {len(kp)}, streak: {streak} ')
             image_kp=cv2.drawKeypoints(image, kp, None, color=(0,255,0), flags=cv2.DrawMatchesFlags_DEFAULT)
-            display_images("image", image, "image with kps",image_kp)
             lastgood=True
         else:
             lastgood=False
             streak=0
 
 
-orb = cv2.ORB_create()
+#orb = cv2.ORB_create()
 #orb = cv2.ORB_create(edgeThreshold=50, patchSize=31, nlevels=8, fastThreshold=20, scaleFactor=1, WTA_K=2,scoreType=cv2.ORB_FAST_SCORE, firstLevel=0, nfeatures=50000)
+orb = cv2.ORB_create(scaleFactor=2, scoreType=cv2.ORB_FAST_SCORE, nfeatures=100000)
 matcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 #matcher = cv2.BFMatcher()
 
@@ -77,7 +77,6 @@ def show_matches(img1, img2):
 
         matches = matcher.match(desc1, desc2)
         print(len(matches))
-                
 
 # Draw first 10 matches.
         img3 = cv2.drawMatches(img1,kp1,img2,kp2,matches[:10],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
@@ -98,7 +97,6 @@ print(len(images))
 for i in range( len(images) - 1):
         i1=images[i]
         i2=images[i+1]
-        print(i)
         show_matches(i1, i2)
 
 
