@@ -101,3 +101,76 @@ python3 stitch.py --images images/rug  --output rug.png
 
 
 
+##test script to split videos
+
+
+```bash
+>python3 vproc.py day2a.mkv 30
+
+file written: videos/day2a.mkv_frame0.jpg
+file written: videos/day2a.mkv_frame30.jpg
+file written: videos/day2a.mkv_frame60.jpg
+file written: videos/day2a.mkv_frame90.jpg
+file written: videos/day2a.mkv_frame120.jpg
+file written: videos/day2a.mkv_frame150.jpg
+file written: videos/day2a.mkv_frame180.jpg
+file written: videos/day2a.mkv_frame210.jpg
+file written: videos/day2a.mkv_frame240.jpg
+file written: videos/day2a.mkv_frame270.jpg
+file written: videos/day2a.mkv_frame300.jpg
+file written: videos/day2a.mkv_frame330.jpg
+file written: videos/day2a.mkv_frame360.jpg
+file written: videos/day2a.mkv_frame390.jpg
+file written: videos/day2a.mkv_frame420.jpg
+file written: videos/day2a.mkv_frame450.jpg
+file written: videos/day2a.mkv_frame480.jpg
+file written: videos/day2a.mkv_frame510.jpg
+file written: videos/day2a.mkv_frame540.jpg
+file written: videos/day2a.mkv_frame570.jpg
+file written: videos/day2a.mkv_frame600.jpg
+file written: videos/day2a.mkv_frame630.jpg
+file written: videos/day2a.mkv_frame660.jpg
+file written: videos/day2a.mkv_frame690.jpg
+file written: videos/day2a.mkv_frame720.jpg
+file written: videos/day2a.mkv_frame750.jpg
+file written: videos/day2a.mkv_frame780.jpg
+file written: videos/day2a.mkv_frame810.jpg
+file written: videos/day2a.mkv_frame840.jpg
+file written: videos/day2a.mkv_frame870.jpg
+file written: videos/day2a.mkv_frame900.jpg
+file written: videos/day2a.mkv_frame930.jpg
+file written: videos/day2a.mkv_frame960.jpg
+file written: videos/day2a.mkv_frame990.jpg
+file written: videos/day2a.mkv_frame1020.jpg
+file written: videos/day2a.mkv_frame1050.jpg
+file written: videos/day2a.mkv_frame1080.jpg
+file written: videos/day2a.mkv_frame1110.jpg
+file written: videos/day2a.mkv_frame1140.jpg
+file written: videos/day2a.mkv_frame1170.jpg
+file written: videos/day2a.mkv_frame1200.jpg
+file written: videos/day2a.mkv_frame1230.jpg
+file written: videos/day2a.mkv_frame1260.jpg
+file written: videos/day2a.mkv_frame1290.jpg
+file written: videos/day2a.mkv_frame1320.jpg
+file written: videos/day2a.mkv_frame1350.jpg
+file written: videos/day2a.mkv_frame1380.jpg
+file written: videos/day2a.mkv_frame1410.jpg
+file written: videos/day2a.mkv_frame1440.jpg
+file written: videos/day2a.mkv_frame1470.jpg
+file written: videos/day2a.mkv_frame1500.jpg
+file written: videos/day2a.mkv_frame1530.jpg
+file written: videos/day2a.mkv_frame1560.jpg
+file written: videos/day2a.mkv_frame1590.jpg
+file written: videos/day2a.mkv_frame1620.jpg
+file written: videos/day2a.mkv_frame1650.jpg
+file written: videos/day2a.mkv_frame1680.jpg
+file written: videos/day2a.mkv_frame1710.jpg
+file written: videos/day2a.mkv_frame1740.jpg
+file written: videos/day2a.mkv_frame1770.jpg
+file written: videos/day2a.mkv_frame1800.jpg
+file written: videos/day2a.mkv_frame1830.jpg
+file written: videos/day2a.mkv_frame1860.jpg
+file written: videos/day2a.mkv_frame1890.jpg
+file written: videos/day2a.mkv_frame1920.jpg
+```
+
