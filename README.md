@@ -101,7 +101,7 @@ python3 stitch.py --images images/rug  --output rug.png
 
 
 
-##test script to split videos
+## test script to split videos
 
 
 ```bash
