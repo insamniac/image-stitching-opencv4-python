@@ -36,10 +36,10 @@ do
  if [[ $(ls images/${oName}_${i} 2>/dev/null | wc -l) -gt 0 ]] ; then
     for img in $(ls images/${oName}_${i}/)
     do
-        echo "<img src='${img}' width='64px' align='left' />" 
+        echo "<img src='../images/${oName}_${i}/${img}' width='64px' align='left' />" 
     done > $oLog
 
-    echo "<img src='stitched_output/${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
+    echo "<img src='${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
  fi
 done
 
