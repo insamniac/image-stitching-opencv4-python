@@ -105,7 +105,7 @@ python3 stitch.py --images images/rug  --output rug.png
 
 
 ```bash
->python3 vproc.py day2a.mkv 30
+>python3 vproc.py videos/day2a.mkv 30
 
 file written: videos/day2a.mkv_frame0.jpg
 file written: videos/day2a.mkv_frame30.jpg
