@@ -33,10 +33,25 @@ Try to stitch each group
 ```bash
 for i in $(seq -w 0000 $groups)
 do 
- time python3 stitch.py --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png
+ oLog=stitched_output/${oName}_${i}.md
+
+ time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png 
+ if [[ $? -eq 0 ]] ; then
+    for img in $(ls images/${oName}_${i}/)
+    do
+        echo "<img src='${img}' width='64px' align='left' />" 
+    done > $oLog
+
+    echo "<img src='stitched_output/${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
+ fi
 done
 ```
 
+```bash
+<img src="images/rug/rug10.jpg" width="64px" align="left" />
+
+
+<img src="rug.png" alt="stitched rug panorama" title="rug"/>
 cleanup (delete all/most of the mess we just made)
 ```bash
 rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
@@ -45,7 +60,10 @@ rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
 
 
 
-#### random notes
+### other random notes
+
+- added --nodisplay option to squelch the image popup
+    - useful when running in a loop or inside a script
 
 - added -cthresh option to use a lower confidence level
     - after my initial image stitching test failed, setting confidence from 1.0 to 0.8 succeeded
