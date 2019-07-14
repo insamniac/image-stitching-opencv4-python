@@ -32,30 +32,32 @@ done
 Try to stitch each group
 ```bash
 for i in $(seq -w 0000 $groups)
-do
+do 
  oLog=stitched_output/${oName}_${i}.md
  which tee >/dev/null && TEE=true
  if [ $TEE ]; then
+     echo writing script output to $oLog
      echo '```bash' > $oLog
      time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png | tee -a $oLog
      echo '```' >> $oLog
  else
      echo > $oLog
-     time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png
+     time python3 stitch.py --nodisplay --images images/${oName}_${i} --output stitched_output/${oName}_${i}.png 
  fi
 
  if [[ $(ls images/${oName}_${i} 2>/dev/null | wc -l) -gt 0 ]] ; then
     for img in $(ls images/${oName}_${i}/)
     do
-        echo "<img src='${img}' width='64px' align='left' />" 
+        echo "<img src='../images/${oName}_${i}/${img}' width='64px' align='left' />" 
     done > $oLog
 
-    echo "<img src='stitched_output/${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
+    echo "<img src='${oName}_${i}.png' alt='stitched output for ${oName}' title='stitched' />" >> $oLog
  fi
 done
+
 ```
 
-cleanup (delete all/most of the mess we just made)
+cleanup (delete all/most of the mess we just made) USE THIS CAREFULLY
 ```bash
 rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
 ```
