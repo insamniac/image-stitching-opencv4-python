@@ -57,9 +57,9 @@ done
 
 ```
 
-cleanup (delete all/most of the mess we just made) USE THIS CAREFULLY
+cleanup (delete all/most of the mess we just made)
 ```bash
-rm -Rf images/${oName}* videos/${oName}* stitched_output/${oName}*
+rm -Rf images/DIRNAME* videos/DIRNAME* stitched_output/DIRNAME*
 ```
 
 
