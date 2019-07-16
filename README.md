@@ -1,4 +1,7 @@
-credit to https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python, and lots of other people who've done all the real work preceeding this
+credit to https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python,
+https://www.geeksforgeeks.org/python-program-extract-frames-using-opencv/
+and lots of other people who've done all the real work preceeding this
+
 
 
 ### stitch the floor
@@ -101,11 +104,11 @@ python3 stitch.py --images images/rug  --output rug.png
 
 
 
-##test script to split videos
+## test script to split videos
 
 
 ```bash
->python3 vproc.py day2a.mkv 30
+>python3 vproc.py videos/day2a.mkv 30
 
 file written: videos/day2a.mkv_frame0.jpg
 file written: videos/day2a.mkv_frame30.jpg
