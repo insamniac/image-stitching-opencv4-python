@@ -27,7 +27,8 @@ while success:
     success, image = vid.read() 
     seen += 1
     if success and (seen % everyN) == 0:
-        o_file='{0}/frame{1}.jpg'.format(output_dir,str(seen).zfill(5))
+        o_file='{}/frame{:05}.jpg'.format(output_dir,seen)
+
         
         cv2.imwrite(o_file, image) 
 #        cv2.imshow( 'image{}'.format(seen), image)
