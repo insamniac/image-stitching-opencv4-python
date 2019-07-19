@@ -10,14 +10,14 @@ oName="${1:-00100}"
 # frames per second... (images per second)
 FPS=${2:-1}
 mkdir images/${oName}
-ffmpeg -i videos/${oName}.MTS -qscale:v 2 -vf "rotate=90,scale=1024:-1,fps=${FPS}" images/${oName}/%05d.jpg
+ffmpeg -i videos/${oName}.MTS -qscale:v 2 -vf "transpose=1,scale=1024:-1,fps=${FPS}" images/${oName}/%05d.jpg
 
 #Move images into groups of no more than 10..
 groups=$(( $(ls images/${oName} | wc -l) / 10))
 for i in $(seq -w 0000 $groups)
 do 
  mkdir images/${oName}_${i} 
- mv images/${oName}/${i}*.jpg images/${oName}_${i} 
+ cp images/${oName}/${i}*.jpg images/${oName}_${i} 
 done
 
 #Try to stitch each group

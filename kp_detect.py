@@ -93,6 +93,8 @@ print(len(images))
 for i in range( len(images) - 1):
         i1=images[i]
         i2=images[i+1]
+        #draw_kp("image a", i1)
+        #draw_kp("image b", i2)
         show_matches(i1, i2)
 
 
