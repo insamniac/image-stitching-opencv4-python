@@ -1,7 +1,3 @@
-# USAGE
-# python image_stitching.py --images images/scottsdale --output output.png --crop 1
-
-# import the necessary packages
 from imutils import paths
 import numpy as np
 import argparse
@@ -66,8 +62,8 @@ def draw_kp(path, image):
 
 
 #orb = cv2.ORB_create()
-#orb = cv2.ORB_create(edgeThreshold=50, patchSize=31, nlevels=8, fastThreshold=20, scaleFactor=1, WTA_K=2,scoreType=cv2.ORB_FAST_SCORE, firstLevel=0, nfeatures=50000)
-orb = cv2.ORB_create(scaleFactor=2, scoreType=cv2.ORB_FAST_SCORE, nfeatures=100000)
+orb = cv2.ORB_create(edgeThreshold=50, patchSize=31, nlevels=8, fastThreshold=20, scaleFactor=1, WTA_K=2,scoreType=cv2.ORB_FAST_SCORE, firstLevel=0, nfeatures=50000)
+#orb = cv2.ORB_create(scaleFactor=2, scoreType=cv2.ORB_FAST_SCORE, nfeatures=100000)
 matcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 #matcher = cv2.BFMatcher()
 
